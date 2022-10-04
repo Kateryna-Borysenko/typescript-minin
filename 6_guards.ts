@@ -1,4 +1,4 @@
-function strip(x: string | number) {
+function strip(x: string | number) { //guards - вспомогательные конструкции
   if (typeof x === 'number') {
     return x.toFixed(2)
   }
@@ -16,7 +16,7 @@ class MyError {
 }
 
 function handle(res: MyResponse | MyError) {
-  if (res instanceof MyResponse) {
+  if (res instanceof MyResponse) { //instanceof как и в обычном js позволяет определить родительский класс
     return {
       info: res.header + res.result
     }
@@ -29,7 +29,7 @@ function handle(res: MyResponse | MyError) {
 
 // ===================
 
-type AlertType = 'success' | 'danger' | 'warning'
+type AlertType = 'success' | 'danger' | 'warning' 
 
 function setAlertType(type: AlertType) {
   // ....
