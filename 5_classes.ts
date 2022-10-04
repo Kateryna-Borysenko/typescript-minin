@@ -10,6 +10,7 @@ class Typescript {
   }
 }
 
+// идентичная запись
 // class Car {
 //   readonly model: string
 //   readonly numberOfWheels: number = 4
@@ -27,15 +28,15 @@ class Car {
 
 
 class Animal {
-  protected voice: string = ''
-  public color: string = 'black'
+  protected voice: string = '' //модификатор   protected - доступно всем
+  public color: string = 'black' //доступно всет
 
   constructor() {
     this.go()
   }
 
   private go() {
-    console.log('Go')
+    console.log('Go') //модификатор  private - доступен только в animal
   }
 }
 
@@ -52,7 +53,7 @@ console.log(cat.color)
 
 // =====================
 
-abstract class Component {
+abstract class Component { //обстрактный клас для наследования 
   abstract render(): void
   abstract info(): string
 }
