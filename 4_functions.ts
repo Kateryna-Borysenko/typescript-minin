@@ -1,8 +1,8 @@
-function add(a: number, b: number): number {
+function add(a: number, b: number): number { //вернёт число
   return a + b
 }
 
-function toUpperCase(str: string): string {
+function toUpperCase(str: string): string { //вернёт строку
   return str.trim().toUpperCase()
 }
 
@@ -20,7 +20,7 @@ function position(a: number): MyPositionWithDefault
 function position(a: number, b: number): MyPosition
 
 function position(a?: number, b?: number) {
-  if (!a && !b) {
+  if (!a && !b) { //! если это не равно a и не b
     return {x: undefined, y: undefined}
   }
 
