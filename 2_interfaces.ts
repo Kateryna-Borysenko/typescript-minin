@@ -1,6 +1,6 @@
-interface Rect {
-  readonly id: string
-  color?: string
+interface Rect { //интерфейсы нужны для объекто или классов
+  readonly id: string //только для чтения поле 
+  color?: string  //не обязательное поле
   size: {
     width: number
     height: number
@@ -27,13 +27,15 @@ const rect2: Rect = {
 rect2.color = 'black'
 // rect2.id = '3232'
 
-const rect3 = {} as Rect
-const rect4 = <Rect>{}
+//можем указывать к какому типу будет относиться объект
+
+const rect3 = {} as Rect //строго привили к какомуто типу
+const rect4 = <Rect>{} //это альтернативная старая запись строки 32
 
 // =====================
-
+//наследование интерфейсов -> у него будет всё что есть в Rect + новый метод
 interface RectWithArea extends Rect {
-  getArea: () => number
+  getArea: () => number //эта ф-ция вернёт число
 }
 
 const rect5: RectWithArea = {
@@ -50,8 +52,8 @@ const rect5: RectWithArea = {
 // ==================
 
 interface IClock {
-  time: Date
-  setTime(date: Date): void
+  time: Date //типизация даты
+  setTime(date: Date): void //ничего не вернёт
 }
 
 class Clock implements IClock {
@@ -63,9 +65,10 @@ class Clock implements IClock {
 }
 
 // =================
+//в случае когда нам нужно создать объект с кучей денамических ключей 
 
 interface Styles {
-  [key: string]: string
+  [key: string]: string //спец синтаксис [key: string]
 }
 
 const css: Styles = {
